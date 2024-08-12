@@ -634,7 +634,7 @@ class CondDocID_DRTrainer(Trainer):
                     and not is_torch_tpu_available()
                     and (torch.isnan(tr_loss_step) or torch.isinf(tr_loss_step)) 
                 ):
-                    # if loss is nan or inf simply add the average of previous logged losses
+                    # if loss is nan or inf simply add the average of previous logged losses (NOT_SURE)
                     tr_loss += tr_loss / (1 + self.state.global_step - self._globalstep_last_logged)
                     tr_task_losses /= tr_task_losses / (1 + self.state.global_step - self._globalstep_last_logged) ###################
                 else:
