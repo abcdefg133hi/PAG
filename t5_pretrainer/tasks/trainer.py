@@ -563,7 +563,7 @@ class CondDocID_DRTrainer(Trainer):
 
         # tr_loss is a tensor to avoid synchronization of TPUs through .item()
         tr_loss = torch.tensor(0.0).to(args.device)
-        tr_task_losses = torch.zeros(self.args.num_tasks).to(args.device) ################
+        tr_task_losses = torch.zeros(self.args.num_tasks).to(args.device) ################ (NOT_SURE)
         # _total_loss_scalar is updated everytime .item() has to be called on tr_loss and stores the sum of all losses
         self._total_loss_scalar = 0.0
         self._total_task_loss_scalars = [0.0 for _ in range(self.args.num_tasks)] ################
